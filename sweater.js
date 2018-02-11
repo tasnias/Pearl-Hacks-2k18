@@ -52,7 +52,7 @@ function processImage3() {
 
 
       var temp = num;
-      if (temp < 59.00) {
+      if (temp < 60.00) {
         document.querySelector("#sourceImage3").src = sweaterurl
       };
     })

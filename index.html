@@ -11,7 +11,8 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
   <script  src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous">
+  </script>
 </head>
 <body>
 <header>
@@ -65,6 +66,7 @@
 </script>
 
 <h3>Your wardrobe:</h3>
+<!--Ideally we would prompt the user to upload some files which Microsoft Cognative services would analyze; based on the tags it generates, the image is put in a folder; generating an outfit would randomly pick an outfit out of a specific bin based on the weather-->
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Japanese-market_-pointerbrand_wool_band-collar_jacket_%289598148489%29.jpg" height="128">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4CuuSTRMoEDBPIcOI-4Ub-BRVru-5WM88iYIva0EO004aKd98NA" height="128">
 <img src="https://upload.wikimedia.org/wikipedia/en/5/55/Seaman_jumper.JPG" height="128">
@@ -72,7 +74,8 @@
 <br><br>
 <hr>
 <h3>Click to see your outfit for today:</h3>
-<input type="button" class="btn btn-danger" value="!!" onclick="processImage(), processImage2(), processImage3()"/>
+<input type="button" class="btn btn-danger" value="Get Outfit" onclick="processImage(), processImage2(), processImage3()"/>
+<button class="btn btn-danger" onclick="location.reload()">Clear</button>
 <br><br>
     <div id="imageDiv">
         <img id="sourceImage1" height="200px" />
@@ -81,6 +84,8 @@
     </div>
     <div id="notes">
     </div>
+<br><br>
+
 </main>
 </body>
 </html>
