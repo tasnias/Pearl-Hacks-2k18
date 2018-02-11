@@ -48,10 +48,9 @@ function processImage() {
       if (arr.includes("coat"))
       var coaturl = sourceImageUrl;
 
-      var temp = 70;
-      if (temp < 40) {
-        document.querySelector("#NEWPLACE").src = sourceImageUrl;
-      }
+      var temp = whatsit;
+      if (temp < 40)
+      document.querySelector("#NEWPLACE").src = sourceImageUrl;
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
@@ -60,43 +59,4 @@ function processImage() {
       errorString += (jqXHR.responseText === "") ? "" : jQuery.parseJSON(jqXHR.responseText).message;
       alert(errorString);
     });
-
-    // Display the image.
-    var sourceImageUrl = "https://c1.staticflickr.com/9/8227/8548233208_f38c0bbb46_b.jpg";
-    document.querySelector("#sourceImage").src = sourceImageUrl;
-
-    // Perform the REST API call.
-    $.ajax({
-        url: uriBase + "?" + $.param(params),
-
-        // Request headers.
-        beforeSend: function(xhrObj){
-            xhrObj.setRequestHeader("Content-Type","application/json");
-            xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-        },
-
-        type: "POST",
-
-        // Request body.
-        data: '{"url": ' + '"' + sourceImageUrl + '"}',
-    })
-
-    .done(function(data) {
-      //document.querySelector("#sourceImage").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmY0X4pN6FdoE-R49hWyseyU43shE-Ej9tLSEfaSynRiD4HUnn";
-
-      var arr = JSON.stringify(data, null, 2);
-      if (arr.includes("dress"))
-      var dressurl = sourceImageUrl;
-
-      if (temp > 65)
-        document.querySelector("#sourceImage").src = dressurl;
-    })
-
-    .fail(function(jqXHR, textStatus, errorThrown) {
-      // Display error message.
-      var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
-      errorString += (jqXHR.responseText === "") ? "" : jQuery.parseJSON(jqXHR.responseText).message;
-      alert(errorString);
-    });
-
   };
