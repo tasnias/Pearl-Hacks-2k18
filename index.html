@@ -4,25 +4,23 @@
     <title>Tell me How to Dress</title>
     <meta charset="utf-8" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!--<link rel="stylesheet" type="text/css" href="styles.css">-->
 </head>
 <body>
-  Tell me how to dress
-
+<header>
+  <h1>Tell me how to dress</h1>
+</header>
   <form action="upload.php" method="post" enctype="multipart/form-data">
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">
 </form>
 
-
 <script src="theworkings.js">
 </script>
 
 <h1>Upload Your Wardrobe pls:</h1>
-Enter the URL to an image of a natural or artificial landmark, then click the <strong>Analyze image</strong> button.
 <br><br>
-Landscape image to analyze: <input type="text" name="inputImage" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/2/23/Space_Needle_2011-07-04.jpg" />
+ image to analyze: <input type="text" name="inputImage" id="inputImage" value='uploads/pants1.jpg' />
 <button onclick="processImage()">Analyze image</button>
 <br><br>
 <div id="wrapper" style="width:1020px; display:table;">
