@@ -45,8 +45,9 @@ function processImage() {
       //document.querySelector("#sourceImage").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmY0X4pN6FdoE-R49hWyseyU43shE-Ej9tLSEfaSynRiD4HUnn";
 
       var arr = JSON.stringify(data, null, 2);
-      if (arr.includes("coat"))
-      var coaturl = sourceImageUrl;
+      if (arr.includes("coat")) {
+        var coaturl = sourceImageUrl
+      };
 
       var temp = 30;
       if (temp < 40) {

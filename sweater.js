@@ -14,7 +14,7 @@ function processImage3() {
     //
     // NOTE: Free trial subscription keys are generated in the westcentralus region, so if you are using
     // a free trial subscription key, you should not need to change this region.
-    var uriBase = "http://wachabuy.com/wp-content/uploads/2017/10/fall-outfits-slim-fit-jeans-knit-sweater.jpg";
+    var uriBase = "https://eastus.api.cognitive.microsoft.com/vision/v1.0/analyze";
 
     // Request parameters.
     var params = {
@@ -22,7 +22,7 @@ function processImage3() {
     };
 
     // Display the image.
-    var sourceImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Jeans_for_men.jpg/215px-Jeans_for_men.jpg";
+    var sourceImageUrl = "https://upload.wikimedia.org/wikipedia/en/5/55/Seaman_jumper.JPG";
     // document.querySelector("#sourceImage").src = sourceImageUrl;
 
     // Perform the REST API call.
@@ -45,13 +45,13 @@ function processImage3() {
       //document.querySelector("#sourceImage").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmY0X4pN6FdoE-R49hWyseyU43shE-Ej9tLSEfaSynRiD4HUnn";
 
       var arr = JSON.stringify(data, null, 2);
-      if (arr.includes("pants") || arr,includes("sweater")) {
-        var pantsurl = sourceImageUrl
+      if (arr.includes("sweater")) {
+        var sweaterurl = sourceImageUrl
       };
 
       var temp = 30;
       if (temp < 55) {
-        document.querySelector("#sourceImage").src = pantsurl
+        document.querySelector("#katestry").src = sweaterurl
       };
     })
 
