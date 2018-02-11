@@ -4,37 +4,25 @@
     <title>Dress Me!</title>
     <meta charset="utf-8" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <!--<link rel="stylesheet" type="text/css" href="styles.css">-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
   <script  src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
-    <!-- <style>
-  body {
-
-     background-image: url("https://cdn.pixabay.com/photo/2016/02/19/11/41/clouds-1209877_1280.jpg");
-    background-color: powderblue;}
-  h1   {color: black;
-    font-family: Bebas Neue;
-    font-size: 500%;
-
-
-        }
-
-  p    {color: red;}
-
-}
-  </style> -->
 </head>
 <body>
-
-<h1 align = "center">Dress Me!
-</h1>
-
-  <h2 align= "center">What Should I wear today</h2>
-
+<header>
+<h1 align = "center">Dress Me!</h1>
+</header>
+<main>
   <h2 align= "center">What Should I wear today?</h2>
-  <input id="city"></input>
-  <button id ="getWeatherForcast"> Get Weather </button>
+
+  <input type="text" id="city"></input>
+  <button  class="btn btn-danger" id ="getWeatherForcast"> Get Weather </button>
+  <hr>
   <div id= "showWeatherForcast"></div>
 
   <script type="text/javascript">
@@ -59,6 +47,7 @@
         helper += '<p><b>' + response.name + '</b></p>'+ response.main.temp + '&deg;F' + ' | '
          + val.main + ", "  + val.description
       });
+       localStorage.setItem("temp",response.main.temp);
       $("#showWeatherForcast").html(helper);
 
   });
@@ -75,16 +64,15 @@
 <script src="sweater.js">
 </script>
 
-<h2>Upload Your Wardrobe pls:</h2>
-=======
-<h1>Your wardrobe:</h1>
+<h3>Upload Photos of Your Wardrobe:</h3>
+<button class="btn btn-danger">Non-Functional</button>
 <br><br>
+<h3>Your wardrobe:</h3>
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Japanese-market_-pointerbrand_wool_band-collar_jacket_%289598148489%29.jpg" height="128">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4CuuSTRMoEDBPIcOI-4Ub-BRVru-5WM88iYIva0EO004aKd98NA" height="128">
-
-<h1>Click to see your outfit for today:</h1>
-<br><br>
-<button onclick="processImage();processImage2();">?</button>
+<hr>
+<h3>Click to see your outfit for today:</h3>
+<button class="btn btn-danger" onclick="processImage();processImage2();">?</button>
 <br><br>
 <div id="wrapper" style="width:1020px; display:table;">
     <div id="jsonOutput" style="width:420px; display:table-cell;">
@@ -94,5 +82,6 @@
         <img id="sourceImage" width="400" />
     </div>
 </div>
+</main>
 </body>
 </html>
