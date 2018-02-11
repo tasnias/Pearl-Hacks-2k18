@@ -49,9 +49,10 @@ function processImage() {
         var coaturl = sourceImageUrl
       };
 
-      var temp = 30;
+    //  var temp = 30;
       if (temp < 40) {
-        document.querySelector("#sourceImage1").src = coaturl
+        document.querySelector("#sourceImage1").src = coaturl;
+        document.getElementById('notes').innerHTML = "It's cold!";
       };
     })
 

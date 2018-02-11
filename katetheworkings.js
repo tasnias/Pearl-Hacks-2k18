@@ -1,4 +1,4 @@
-function processImage()
+function processImage4()
 {
   // **********************************************
   // *** Update or verify the following values. ***
@@ -26,6 +26,8 @@ function processImage()
     "visualFeatures": "Description",
   };
 
+  var sourceImageUrl = "http://maxpixel.freegreatpicture.com/static/photo/2x/People-Exposure-Studio-Pants-Design-Photography-2604730.jpg";
+
   // Perform the REST API call.
   $.ajax
   ({
@@ -42,19 +44,17 @@ function processImage()
 
       // Request body.
       //'data:image/jpeg;base64,' + btoa('your-binary-data');
-      data: '{"url": ' + '"' + "https://flic.kr/p/7fKFHk" + '"}',
+      data: '{"url": ' + '"' + sourceImageUrl + '"}',
   })
 
     .done(function(data)
     {
       //var temp = 55;
-      //var arr = JSON.stringify(data, null, 2);
-      $("#responseTextArea").val(JSON.stringify(data, null, 2));
-      //var m = arr.includes("pants");
-      //var pants = "uploads/pants1.jpg"
-      //if (temp < 60)
-      //document.querySelector("#sourceImage").src = pants;
-
+      var arr = JSON.stringify(data, null, 2);
+      //if (arr.includes("pants"))
+        var pants = sourceImageUrl
+      if (temp < 70)
+      document.querySelector("#sourceImage4").src = pants;
     })
 
     .fail(function(jqXHR, textStatus, errorThrown)

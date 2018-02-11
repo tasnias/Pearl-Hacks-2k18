@@ -49,9 +49,10 @@ function processImage3() {
         var sweaterurl = sourceImageUrl
       };
 
-      var temp = 30;
-      if (temp < 55) {
+    //  var temp = 30;
+      if (temp < 60) {
         document.querySelector("#sourceImage3").src = sweaterurl
+        document.getElementById('notes').innerHTML = "It's cold!";
       };
     })
 

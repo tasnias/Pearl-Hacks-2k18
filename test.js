@@ -49,9 +49,11 @@ function processImage2() {
         var dressurl = sourceImageUrl
       };
 
-      var temp = 30;
-      if (temp > 70) {
+      //var temp = 30;
+      if (temp > 60) {
         document.querySelector("#sourceImage2").src = dressurl
+        document.getElementById('notes').innerHTML = "Nice and Warm";
+
       };
     })
 
