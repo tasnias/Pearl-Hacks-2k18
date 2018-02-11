@@ -4,21 +4,21 @@ body, html
   margin: none;
   padding: none;
   font-family: Europa, sans-serif;
-
 }
 
 header
 {
-  height: 3em;
+  height: 4em;
   background-color: #900C3F;
   margin: none;
   color: white;
   margin-bottom: 10px;
   border-bottom: #FF5733 solid 5px;
+  padding: 5px;
 }
 
-input [type=button], [type=submit], button,
+main
 {
-  border-radius: 5px;
-
+  margin: 0 3em;
+  padding-bottom: 3em;
 }
