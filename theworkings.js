@@ -1,133 +1,62 @@
-<<<<<<< HEAD
-function processImage()
-{
-  // **********************************************
-  // *** Update or verify the following values. ***
-  // **********************************************
+function processImage() {
+    // **********************************************
+    // *** Update or verify the following values. ***
+    // **********************************************
 
-  // Replace the subscriptionKey string value with your valid subscription key.
-  var subscriptionKey = "c9ff0ef0cbf2491b8b4c89572347e4dc";
+    // Replace the subscriptionKey string value with your valid subscription key.
+    var subscriptionKey = "c9ff0ef0cbf2491b8b4c89572347e4dc";
 
-  // Replace or verify the region.
-  //
-  // You must use the same region in your REST API call as you used to obtain your subscription keys.
-  // For example, if you obtained your subscription keys from the westus region, replace
-  // "westcentralus" in the URI below with "westus".
-  //
-  // NOTE: Free trial subscription keys are generated in the westcentralus region, so if you are using
-  // a free trial subscription key, you should not need to change this region.
-  //
-  // Also, if you want to use the celebrities model, change "landmarks" to "celebrities" here and in
-  // uriBuilder.setParameter to use the Celebrities model.
-  var uriBase = "https://eastus.api.cognitive.microsoft.com/vision/v1.0/analyze";
+    // Replace or verify the region.
+    //
+    // You must use the same region in your REST API call as you used to obtain your subscription keys.
+    // For example, if you obtained your subscription keys from the westus region, replace
+    // "westcentralus" in the URI below with "westus".
+    //
+    // NOTE: Free trial subscription keys are generated in the westcentralus region, so if you are using
+    // a free trial subscription key, you should not need to change this region.
+    var uriBase = "https://eastus.api.cognitive.microsoft.com/vision/v1.0/analyze";
 
-  // Request parameters.
-  var params =
-  {
-    "visualFeatures": "Description",
-  };
+    // Request parameters.
+    var params = {
+        "visualFeatures": "Description",
+    };
 
-  // Display the image.
-  var sourceImageUrl = document.getElementById("inputImage").value;
+    // Display the image.
+    var sourceImageUrl = "https://upload.wikimedia.org/wikipedia/commons/e/ec/Japanese-market_-pointerbrand_wool_band-collar_jacket_%289598148489%29.jpg";
+    document.querySelector("#sourceImage").src = sourceImageUrl;
 
-  // Perform the REST API call.
-  $.ajax
-  ({
-      url: uriBase + "?" + $.param(params),
+    // Perform the REST API call.
+    $.ajax({
+        url: uriBase + "?" + $.param(params),
 
-      // Request headers.
-      beforeSend: function(xhrObj)
-      {
-        xhrObj.setRequestHeader("Content-Type", "application/octet-stream");
-        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-      },
+        // Request headers.
+        beforeSend: function(xhrObj){
+            xhrObj.setRequestHeader("Content-Type","application/json");
+            xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
+        },
 
-      type: "POST",
+        type: "POST",
 
-      // Request body.
-      //'data:image/jpeg;base64,' + btoa('your-binary-data');
-      data: '{"url": ' + '"' + sourceImageUrl + '"}',
-  })
-
-    .done(function(data)
-    {
-      var temp = response.main.temp;
-      var arr = JSON.stringify(data, null, 2);
-      //document.getElementById("responseTextArea").innerHTML = arr;
-      var m = arr.includes("coat");
-      var coat = "uploads/coat.jpg"
-      if (temp < 60)
-      document.querySelector("#sourceImage").src = coat;
-
+        // Request body.
+        data: '{"url": ' + '"' + sourceImageUrl + '"}',
     })
 
-    .fail(function(jqXHR, textStatus, errorThrown)
-    {
+    .done(function(data) {
+      //document.querySelector("#sourceImage").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmY0X4pN6FdoE-R49hWyseyU43shE-Ej9tLSEfaSynRiD4HUnn";
+
+      var arr = JSON.stringify(data, null, 2);
+      if (arr.includes("coat"))
+      var coaturl = sourceImageUrl;
+
+      var temp = whatsit;
+      if (temp < 40)
+      document.querySelector("#NEWPLACE").src = sourceImageUrl;
+    })
+
+    .fail(function(jqXHR, textStatus, errorThrown) {
       // Display error message.
       var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
       errorString += (jqXHR.responseText === "") ? "" : jQuery.parseJSON(jqXHR.responseText).message;
       alert(errorString);
     });
-};
-=======
-    function processImage() {
-        // **********************************************
-        // *** Update or verify the following values. ***
-        // **********************************************
-
-        // Replace the subscriptionKey string value with your valid subscription key.
-        var subscriptionKey = "c9ff0ef0cbf2491b8b4c89572347e4dc";
-
-        // Replace or verify the region.
-        //
-        // You must use the same region in your REST API call as you used to obtain your subscription keys.
-        // For example, if you obtained your subscription keys from the westus region, replace
-        // "westcentralus" in the URI below with "westus".
-        //
-        // NOTE: Free trial subscription keys are generated in the westcentralus region, so if you are using
-        // a free trial subscription key, you should not need to change this region.
-        var uriBase = "https://eastus.api.cognitive.microsoft.com/vision/v1.0/analyze";
-
-        // Request parameters.
-        var params = {
-            "visualFeatures": "Description",
-        };
-
-        // Display the image.
-        var sourceImageUrl = "https://upload.wikimedia.org/wikipedia/commons/e/ec/Japanese-market_-pointerbrand_wool_band-collar_jacket_%289598148489%29.jpg";
-        document.querySelector("#sourceImage").src = sourceImageUrl;
-
-        // Perform the REST API call.
-        $.ajax({
-            url: uriBase + "?" + $.param(params),
-
-            // Request headers.
-            beforeSend: function(xhrObj){
-                xhrObj.setRequestHeader("Content-Type","application/json");
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-            },
-
-            type: "POST",
-
-            // Request body.
-            data: '{"url": ' + '"' + sourceImageUrl + '"}',
-        })
-
-        .done(function(data) {
-          var temp = 55;
-          var arr = JSON.stringify(data, null, 2);
-          //$("#responseTextArea").val(JSON.stringify(data, null, 2));
-          var m = arr.includes("coat");
-          var coat = "uploads/coat.jpg"
-          if (temp < 60)
-          document.querySelector("#sourceImage").src = coat;
-        })
-
-        .fail(function(jqXHR, textStatus, errorThrown) {
-            // Display error message.
-            var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
-            errorString += (jqXHR.responseText === "") ? "" : jQuery.parseJSON(jqXHR.responseText).message;
-            alert(errorString);
-        });
-    };
->>>>>>> f66cefada04750a7e60a6d8fc84b57c15bdd3ac1
+  };
