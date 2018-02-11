@@ -46,12 +46,12 @@ function processImage3() {
 
       var arr = JSON.stringify(data, null, 2);
       if (arr.includes("pants") || arr,includes("sweater")) {
-        var pantsurl = sourceImageUrl
+        var sweaterurl = sourceImageUrl
       };
 
       var temp = 30;
       if (temp < 55) {
-        document.querySelector("#sourceImage").src = pantsurl
+        document.querySelector("#sourceImage").src = sweaterurl;
       };
     })
 
