@@ -37,25 +37,26 @@ function processImage()
       // Request headers.
       beforeSend: function(xhrObj)
       {
-        xhrObj.setRequestHeader("Content-Type", "application/json");
+        xhrObj.setRequestHeader("Content-Type", "application/octet-stream");
         xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
       },
 
       type: "POST",
 
       // Request body.
+      //'data:image/jpeg;base64,' + btoa('your-binary-data');
       data: '{"url": ' + '"' + sourceImageUrl + '"}',
   })
 
     .done(function(data)
     {
-      var temp = 65;
+      var temp = 55;
       var arr = JSON.stringify(data, null, 2);
       //document.getElementById("responseTextArea").innerHTML = arr;
-      var m = arr.includes("shirt");
-
-      if (temp < 70)
-      document.querySelector("#sourceImage").src = sourceImageUrl;
+      var m = arr.includes("pants");
+      var pants = "uploads/pants1.jpg"
+      if (temp < 60)
+      document.querySelector("#sourceImage").src = pants;
 
     })
 
