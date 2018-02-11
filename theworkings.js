@@ -23,7 +23,7 @@ function processImage() {
 
     // Display the image.
     var sourceImageUrl = "https://upload.wikimedia.org/wikipedia/commons/e/ec/Japanese-market_-pointerbrand_wool_band-collar_jacket_%289598148489%29.jpg";
-    document.querySelector("#sourceImage").src = sourceImageUrl;
+    // document.querySelector("#sourceImage").src = sourceImageUrl;
 
     // Perform the REST API call.
     $.ajax({
@@ -48,9 +48,10 @@ function processImage() {
       if (arr.includes("coat"))
       var coaturl = sourceImageUrl;
 
-      var temp = whatsit;
-      if (temp < 40)
-      document.querySelector("#NEWPLACE").src = sourceImageUrl;
+      var temp = 50;
+      if (temp < 40) {
+        document.querySelector("#sourceImage").src = coaturl
+      };
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
