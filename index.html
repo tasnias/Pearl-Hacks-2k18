@@ -8,10 +8,18 @@
   <script  src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+    <style>
+  body {background-color: powderblue;}
+  h1   {color: blue;}
+  p    {color: red;}
+  </style>
 </head>
 <body>
-<header>
-  <h1>Tell me how to dress</h1>
+
+<h1 style="color:blue;", align="center">Dress Me!
+</h1>
+
+  <h2 align= "center">What Should I wear today</h2>
   <input id="city"></input>
   <button id ="getWeatherForcast"> Get Weather </button>
   <div id= "showWeatherForcast"></div>
@@ -21,7 +29,6 @@
       $("#getWeatherForcast").click(function(){
         console.log('clicked');
         var city = $("#city").val();
-        var key = '';
         var data = null;
         var settings = {
     "async": true,
@@ -45,7 +52,8 @@
    });
     });
   </script>
-</header>
+
+
   <form action="upload.php" method="post" enctype="multipart/form-data">
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">

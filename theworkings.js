@@ -50,13 +50,13 @@ function processImage()
 
     .done(function(data)
     {
-      var temp = 55;
+      var temp = response.main.temp;
       var arr = JSON.stringify(data, null, 2);
       //document.getElementById("responseTextArea").innerHTML = arr;
-      var m = arr.includes("pants");
-      var pants = "uploads/pants1.jpg"
+      var m = arr.includes("coat");
+      var coat = "uploads/coat.jpg"
       if (temp < 60)
-      document.querySelector("#sourceImage").src = pants;
+      document.querySelector("#sourceImage").src = coat;
 
     })
 
