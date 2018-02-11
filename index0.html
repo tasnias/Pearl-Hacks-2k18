@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Dress Me</title>
+  </head>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<body>
+<input id="city"></input>
+<button id ="getWeatherForcast"> Get Weather </button>
+<div id= "showWeatherForcast"></div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#getWeatherForcast").click(function(){
+      console.log('clicked');
+      var city = $("#city").val();
+      var key = '';
+      var data = null;
+
+      // var xhr = new XMLHttpRequest();
+      // xhr.withCredentials = true;
+      //
+      // xhr.addEventListener("readystatechange", function () {
+      //   if (this.readyState === 4) {
+      //     console.log(this.responseText);
+      //   }
+      // });
+      //
+      // xhr.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=raleigh&units=imperial&APPID=e8099a47b3b1f75371f9d449d0584d9f");
+      // xhr.setRequestHeader("Cache-Control", "no-cache");
+      // xhr.setRequestHeader("Postman-Token", "b6fe7331-e784-9e57-4054-e7493667cb0d");
+      //
+      // xhr.send(data);
+
+      var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.openweathermap.org/data/2.5/weather?q=" + city +
+  "&units=imperial&APPID=e8099a47b3b1f75371f9d449d0584d9f",
+  "method": "GET",
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+
+    var helper = '';
+    $.each(response.weather, function(index,val) {
+      helper += '<p><b>' + response.name + '</b></p>'+ response.main.temp + '&deg;F' + ' | '
+       + val.main + ", "  + val.description
+    });
+    $("#showWeatherForcast").html(helper);
+
+});
+ });
+  });
+</script>
+</body>
+</html>

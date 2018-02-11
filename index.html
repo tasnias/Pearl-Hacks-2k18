@@ -1,28 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tell me How to Dress</title>
+    <title>Dress Me!</title>
     <meta charset="utf-8" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!--<link rel="stylesheet" type="text/css" href="styles.css">-->
+  <script  src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
 </head>
 <body>
-  Tell me how to dress
+<header>
+  <h1>Tell me how to dress</h1>
+  <input id="city"></input>
+  <button id ="getWeatherForcast"> Get Weather </button>
+  <div id= "showWeatherForcast"></div>
 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#getWeatherForcast").click(function(){
+        console.log('clicked');
+        var city = $("#city").val();
+        var key = '';
+        var data = null;
+        var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://api.openweathermap.org/data/2.5/weather?q=" + city +
+    "&units=imperial&APPID=e8099a47b3b1f75371f9d449d0584d9f",
+    "method": "GET",
+  }
+
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+
+      var helper = '';
+      $.each(response.weather, function(index,val) {
+        helper += '<p><b>' + response.name + '</b></p>'+ response.main.temp + '&deg;F' + ' | '
+         + val.main + ", "  + val.description
+      });
+      $("#showWeatherForcast").html(helper);
+
+  });
+   });
+    });
+  </script>
+</header>
   <form action="upload.php" method="post" enctype="multipart/form-data">
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">
 </form>
 
-
 <script src="theworkings.js">
 </script>
 
 <h1>Upload Your Wardrobe pls:</h1>
-Enter the URL to an image of a natural or artificial landmark, then click the <strong>Analyze image</strong> button.
 <br><br>
-Landscape image to analyze: <input type="text" name="inputImage" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/2/23/Space_Needle_2011-07-04.jpg" />
+ image to analyze: <input type="text" name="inputImage" id="inputImage" value='uploads/pants1.jpg' />
 <button onclick="processImage()">Analyze image</button>
 <br><br>
 <div id="wrapper" style="width:1020px; display:table;">
