@@ -28,7 +28,6 @@ function processImage()
 
   // Display the image.
   var sourceImageUrl = document.getElementById("inputImage").value;
-  document.querySelector("#sourceImage").src = sourceImageUrl;
 
   // Perform the REST API call.
   $.ajax
@@ -50,10 +49,13 @@ function processImage()
 
     .done(function(data)
     {
+      var temp = 65;
       var arr = JSON.stringify(data, null, 2);
       //document.getElementById("responseTextArea").innerHTML = arr;
       var m = arr.includes("shirt");
 
+      if (temp < 70)
+      document.querySelector("#sourceImage").src = sourceImageUrl;
 
     })
 
