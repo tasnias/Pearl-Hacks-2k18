@@ -51,7 +51,7 @@ function processImage2() {
 
       var temp = 30;
       if (temp > 70) {
-        document.querySelector("#sourceImage").src = dressurl
+        document.querySelector("#sourceImage2").src = dressurl
       };
     })
 

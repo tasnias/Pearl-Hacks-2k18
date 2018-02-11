@@ -51,7 +51,7 @@ function processImage3() {
 
       var temp = 30;
       if (temp < 55) {
-        document.querySelector("#katestry").src = sweaterurl
+        document.querySelector("#sourceImage3").src = sweaterurl
       };
     })
 

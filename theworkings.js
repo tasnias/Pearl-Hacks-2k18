@@ -51,7 +51,7 @@ function processImage() {
 
       var temp = 30;
       if (temp < 40) {
-        document.querySelector("#sourceImage").src = coaturl
+        document.querySelector("#sourceImage1").src = coaturl
       };
     })
 
