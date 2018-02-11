@@ -30,8 +30,12 @@
 <h1 align = "center">Dress Me!
 </h1>
 
+<<<<<<< HEAD
   <h2 align= "center">What Should I wear today</h2>
 
+=======
+  <h2 align= "center">What Should I wear today?</h2>
+>>>>>>> 6b4443b2b72b97e155ca99d03ff2176364315c17
   <input id="city"></input>
   <button id ="getWeatherForcast"> Get Weather </button>
   <div id= "showWeatherForcast"></div>
@@ -65,28 +69,32 @@
     });
   </script>
 
-
-  <form action="upload.php" method="post" enctype="multipart/form-data">
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
-</form>
-
 <script src="theworkings.js">
 </script>
 
+<script src="test.js">
+</script>
+
+<script src="sweater.js">
+</script>
+
+<<<<<<< HEAD
 <h2>Upload Your Wardrobe pls:</h2>
+=======
+<h1>Your wardrobe:</h1>
+>>>>>>> 6b4443b2b72b97e155ca99d03ff2176364315c17
 <br><br>
- image to analyze: <input type="text" name="inputImage" id="inputImage" value='uploads/pants1.jpg' />
-<button onclick="processImage()">Analyze image</button>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Japanese-market_-pointerbrand_wool_band-collar_jacket_%289598148489%29.jpg" height="128">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4CuuSTRMoEDBPIcOI-4Ub-BRVru-5WM88iYIva0EO004aKd98NA" height="128">
+
+<h1>Click to see your outfit for today:</h1>
+<br><br>
+<button onclick="processImage();processImage2();">?</button>
 <br><br>
 <div id="wrapper" style="width:1020px; display:table;">
-    <div id="jsonOutput" style="width:600px; display:table-cell;">
-        Response:
-        <br><br>
-        <textarea id="responseTextArea" class="UIInput" style="width:580px; height:400px;"></textarea>
+    <div id="jsonOutput" style="width:420px; display:table-cell;">
     </div>
     <div id="imageDiv" style="width:420px; display:table-cell;">
-        Source image:
         <br><br>
         <img id="sourceImage" width="400" />
     </div>

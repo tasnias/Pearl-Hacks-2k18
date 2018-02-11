@@ -1,4 +1,4 @@
-function processImage() {
+function processImage2() {
     // **********************************************
     // *** Update or verify the following values. ***
     // **********************************************
@@ -22,7 +22,7 @@ function processImage() {
     };
 
     // Display the image.
-    var sourceImageUrl = "https://upload.wikimedia.org/wikipedia/commons/e/ec/Japanese-market_-pointerbrand_wool_band-collar_jacket_%289598148489%29.jpg";
+    var sourceImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4CuuSTRMoEDBPIcOI-4Ub-BRVru-5WM88iYIva0EO004aKd98NA";
     // document.querySelector("#sourceImage").src = sourceImageUrl;
 
     // Perform the REST API call.
@@ -45,12 +45,13 @@ function processImage() {
       //document.querySelector("#sourceImage").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmY0X4pN6FdoE-R49hWyseyU43shE-Ej9tLSEfaSynRiD4HUnn";
 
       var arr = JSON.stringify(data, null, 2);
-      if (arr.includes("coat"))
-      var coaturl = sourceImageUrl;
+      if (arr.includes("dress")) {
+        var dressurl = sourceImageUrl
+      };
 
       var temp = 30;
-      if (temp < 40) {
-        document.querySelector("#sourceImage").src = coaturl
+      if (temp > 70) {
+        document.querySelector("#sourceImage").src = dressurl
       };
     })
 

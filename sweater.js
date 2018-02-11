@@ -1,4 +1,4 @@
-function processImage() {
+function processImage3() {
     // **********************************************
     // *** Update or verify the following values. ***
     // **********************************************
@@ -14,7 +14,7 @@ function processImage() {
     //
     // NOTE: Free trial subscription keys are generated in the westcentralus region, so if you are using
     // a free trial subscription key, you should not need to change this region.
-    var uriBase = "https://eastus.api.cognitive.microsoft.com/vision/v1.0/analyze";
+    var uriBase = "http://wachabuy.com/wp-content/uploads/2017/10/fall-outfits-slim-fit-jeans-knit-sweater.jpg";
 
     // Request parameters.
     var params = {
@@ -22,7 +22,7 @@ function processImage() {
     };
 
     // Display the image.
-    var sourceImageUrl = "https://upload.wikimedia.org/wikipedia/commons/e/ec/Japanese-market_-pointerbrand_wool_band-collar_jacket_%289598148489%29.jpg";
+    var sourceImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Jeans_for_men.jpg/215px-Jeans_for_men.jpg";
     // document.querySelector("#sourceImage").src = sourceImageUrl;
 
     // Perform the REST API call.
@@ -45,12 +45,13 @@ function processImage() {
       //document.querySelector("#sourceImage").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmY0X4pN6FdoE-R49hWyseyU43shE-Ej9tLSEfaSynRiD4HUnn";
 
       var arr = JSON.stringify(data, null, 2);
-      if (arr.includes("coat"))
-      var coaturl = sourceImageUrl;
+      if (arr.includes("pants") || arr,includes("sweater")) {
+        var pantsurl = sourceImageUrl
+      };
 
       var temp = 30;
-      if (temp < 40) {
-        document.querySelector("#sourceImage").src = coaturl
+      if (temp < 55) {
+        document.querySelector("#sourceImage").src = pantsurl
       };
     })
 
