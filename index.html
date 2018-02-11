@@ -19,7 +19,7 @@
 <h1 style="color:blue;", align="center">Dress Me!
 </h1>
 
-  <h2 align= "center">What Should I wear today</h2>
+  <h2 align= "center">What Should I wear today?</h2>
   <input id="city"></input>
   <button id ="getWeatherForcast"> Get Weather </button>
   <div id= "showWeatherForcast"></div>
@@ -53,19 +53,12 @@
     });
   </script>
 
-
-  <form action="upload.php" method="post" enctype="multipart/form-data">
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
-</form>
-
 <script src="theworkings.js">
 </script>
 
-<h1>Upload Your Wardrobe pls:</h1>
+<h1>Click to see your outfit for today:</h1>
 <br><br>
- image to analyze: <input type="text" name="inputImage" id="inputImage" value='uploads/pants1.jpg' />
-<button onclick="processImage()">Analyze image</button>
+<button onclick="processImage()">?</button>
 <br><br>
 <div id="wrapper" style="width:1020px; display:table;">
     <div id="jsonOutput" style="width:600px; display:table-cell;">
