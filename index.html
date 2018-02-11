@@ -36,11 +36,13 @@
         //
         // Also, if you want to use the celebrities model, change "landmarks" to "celebrities" here and in
         // uriBuilder.setParameter to use the Celebrities model.
-        var uriBase = "https://eastus.api.cognitive.microsoft.com/vision/v1.0/models/celebrities/analyze";
+        var uriBase = "https://eastus.api.cognitive.microsoft.com/vision/v1.0/analyze";
 
         // Request parameters.
         var params = {
-            "model": "celebrities", // Use "model": "celebrities" to use the Celebrities model.
+            "visualFeatures": "Description,Color",
+            "details": "",
+            "language": "en",
         };
 
         // Display the image.
