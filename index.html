@@ -15,16 +15,16 @@
 </head>
 <body>
 <header>
-<h1 align = "center">Dress Me!</h1>
+<h1 align = "center">Dress Me</h1>
 </header>
 <main>
-  <h2 align= "center">What Should I wear today?</h2>
-
+  <!--<h2 align= "center">What Should I wear today?</h2>-->
+  <h3>Type in your city to check the weather for today.</h3>
   <input type="text" id="city"></input>
   <button  class="btn btn-danger" id ="getWeatherForcast"> Get Weather </button>
-  <hr>
-  <div id= "showWeatherForcast"></div>
 
+  <div id= "showWeatherForcast"></div>
+  <hr>
   <script type="text/javascript">
     $(document).ready(function() {
       $("#getWeatherForcast").click(function(){
@@ -72,13 +72,18 @@
 <h1>Click to see your outfit for today:</h1>
 <input type="button" onclick="processImage(), processImage2(), processImage3()"/>
 <hr>
+<<<<<<< HEAD
+=======
+<h3>Click to see your outfit for today:</h3>
+<button class="btn btn-danger" onclick="processImage();processImage2();processImage()">?</button>
+>>>>>>> 9a435b4e887cafd3fe0bfb5643f514aaf7423f43
 <br><br>
 <div id="wrapper" style="width:1020px; display:table;">
     <div id="jsonOutput" style="width:420px; display:table-cell;">
     </div>
     <div id="imageDiv" style="width:420px; display:table-cell;">
         <br><br>
-        <img id="sourceImage" width="400" />
+        <img id="sourceImage" width="200px" />
     </div>
     <div id="katestry" style="width:420px; display:table-cell;">
         <br><br>

@@ -3,7 +3,7 @@ body, html
   background-color: #FAF6EE;
   margin: none;
   padding: none;
-  font-family: Europa, sans-serif;
+  font-family: "Europa", sans-serif;
 }
 
 header
@@ -21,4 +21,11 @@ main
 {
   margin: 0 3em;
   padding-bottom: 3em;
+}
+
+#city
+{
+  border-radius: 5px;
+  border: .5px solid gray;
+  height: 2em;
 }
