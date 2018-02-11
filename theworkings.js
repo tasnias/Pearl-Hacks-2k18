@@ -1,3 +1,33 @@
+  var  num;
+$(document).ready(function() {
+    $("#getWeatherForcast").click(function(){
+      console.log('clicked');
+      var city = $("#city").val();
+      var data = null;
+      var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.openweathermap.org/data/2.5/weather?q=" + city +
+  "&units=imperial&APPID=e8099a47b3b1f75371f9d449d0584d9f",
+  "method": "GET",
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+
+    var helper = '';
+    $.each(response.weather, function(index,val) {
+      helper += '<p><b>' + response.name + '</b></p>'+ response.main.temp + ' &deg;F ' + ' | '
+       + val.main + ", "  + val.description
+
+    });
+    $("#showWeatherForcast").html(helper);
+  var  num= response.main.temp;
+});
+
+ });
+  });
+  //var help_temp = response.main.temp;
 function processImage() {
     // **********************************************
     // *** Update or verify the following values. ***
@@ -49,10 +79,9 @@ function processImage() {
         var coaturl = sourceImageUrl
       };
 
-    //  var temp = 30;
-      if (temp < 40) {
-        document.querySelector("#sourceImage1").src = coaturl;
-        document.getElementById('notes').innerHTML = "It's cold!";
+    //  var temp = 63;
+      if (num < 40) {
+        document.querySelector("#sourceImage1").src = coaturl
       };
     })
 
